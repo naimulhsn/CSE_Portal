@@ -11,33 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
-Route::get('/slides', function () {
-    return view('pages.slides');
-});
-Route::get('/notes', function () {
-    return view('pages.notes');
-});
-Route::get('/books', function () {
-    return view('pages.books');
-});
-Route::get('/course', function () {
-    return view('pages.courses');
-});
-Route::get('/upload', function () {
-    return view('pages.upload');
-});
-Route::get('/login', function () {
-    return view('auth.login');
-});
-Route::get('/studentSignup', function () {
-    return view('auth.student');
-});
-Route::get('/teacherSignUp', function () {
-    return view('auth.teacher');
-});
+Route::get('/', 'PageController@index');
+Route::get('/slides', 'PageController@slides');
+Route::get('/notes', 'PageController@notes');
+Route::get('/books', 'PageController@books');
+Route::get('/course', 'PageController@course');
+Route::get('/upload', 'PageController@upload');
+Route::get('/login', 'PageController@login');
+Route::get('/studentSignup', 'PageController@studentSignup');
+Route::get('/teacherSignup', 'PageController@teacherSignup');
+Route::post('/studentSignup', 'PageController@studentCreate')->name('registerStudent');
+Route::post('/teacherSignup', 'PageController@teacherCreate')->name('registerTeacher');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

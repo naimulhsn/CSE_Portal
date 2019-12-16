@@ -1,5 +1,5 @@
 {{--Sidebar--}}
-<div class="wrapper">
+
     <nav id="sidebar">
       <div class="sidebar-header">
         <h3>MENU</h3>
@@ -56,9 +56,3 @@
         </li>
       </ul>
     </nav>
-
-
-    @yield('content')
-
-    
-  </div>

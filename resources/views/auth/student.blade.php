@@ -8,11 +8,11 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('registerS\tudent') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Full Name</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -24,19 +24,45 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="form-group row">
-                            <label for="studentid" class="col-md-4 col-form-label text-md-right">{{ __('Student ID') }}</label>
+                            <label for="student_id" class="col-md-4 col-form-label text-md-right">Student ID</label>
+
                             <div class="col-md-6">
-                                <input
-                                class="form-control"
-                                type="text"
-                                id="studentId"
-                                placeholder="Enter Student Id"
-                              />
+                                <input id="student_id" type="text" class="form-control @error('student_id') is-invalid @enderror" name="student_id" value="{{ old('student_id') }}" required autocomplete="student_id" autofocus>
+
+                                @error('student_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
-                            
-                          </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mobile1" class="col-md-4 col-form-label text-md-right">Phone No. 1 </label>
+
+                            <div class="col-md-6">
+                                <input id="mobile1" type="text" class="form-control @error('mobile1') is-invalid @enderror" name="mobile1" value="{{ old('mobile1') }}" required autocomplete="mobile1" autofocus>
+
+                                @error('mobile1')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mobile2" class="col-md-4 col-form-label text-md-right">Phone No. 2</label>
+
+                            <div class="col-md-6">
+                                <input id="mobile2" type="text" class="form-control @error('mobile2') is-invalid @enderror" name="mobile2" value="{{ old('mobile2') }}" autocomplete="mobile2" autofocus>
+
+                                @error('mobile2')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -51,20 +77,6 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="MobileNo" class="col-md-4 col-form-label text-md-right">{{ __('Mobile No') }}</label>
-                            <div class="col-md-6">
-                                <input
-                                class="form-control"
-                                type="text"
-                                id="mobile"
-                                placeholder="Enter Mobile No"
-                              />
-                            </div>
-                            
-                        </div>
-
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
