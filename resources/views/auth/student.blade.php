@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Register as a Student') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('registerS\tudent') }}">
+                    <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -38,31 +38,19 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="mobile1" class="col-md-4 col-form-label text-md-right">Phone No. 1 </label>
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">Mobile No. </label>
 
                             <div class="col-md-6">
-                                <input id="mobile1" type="text" class="form-control @error('mobile1') is-invalid @enderror" name="mobile1" value="{{ old('mobile1') }}" required autocomplete="mobile1" autofocus>
+                                <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
 
-                                @error('mobile1')
+                                @error('mobile')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="mobile2" class="col-md-4 col-form-label text-md-right">Phone No. 2</label>
-
-                            <div class="col-md-6">
-                                <input id="mobile2" type="text" class="form-control @error('mobile2') is-invalid @enderror" name="mobile2" value="{{ old('mobile2') }}" autocomplete="mobile2" autofocus>
-
-                                @error('mobile2')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                   
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -99,6 +87,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <input type="hidden" name="admin" value=0>
+                        <input type="hidden" name="role" value="Student">
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

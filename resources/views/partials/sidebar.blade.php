@@ -16,6 +16,9 @@
           >
           <ul class="collapse list-unstyled" id="homeSubmenu">
             <li>
+              <a href="/course">All Courses</a>
+            </li>
+            <li>
               <a href="#">CSE 351</a>
             </li>
             <li>

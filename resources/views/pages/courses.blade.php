@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="content">
+<div class="content ">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button type="button" id="sidebarCollapse" class="btn btn-info">
         <i class="fa fa-align-justify"></i> <span></span>
@@ -21,17 +21,13 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <button class="btn btn-outline-dark" type="button">
-            Slides
-          </button>
+          <a class="btn btn-outline-dark" href="/slides">Slides</a>
         </div>
         <div class="col-md-4">
-          <button class="btn btn-outline-dark" type="button">
-            Notes
-          </button>
+          <a class="btn btn-outline-dark" href="/notes">Notes</a>
         </div>
         <div class="col-md-4">
-          <button class="btn btn-outline-dark" type="button">Books</button>
+          <a class="btn btn-outline-dark" href="/books">Books</a>
         </div>
       </div>
       <br />
