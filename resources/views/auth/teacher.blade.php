@@ -1,20 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+<ul class="cb-slideshow">
+    <li><span>Image 01</span></li>
+    <li><span>Image 02</span></li>
+    <li><span>Image 03</span></li>
+    <li><span>Image 04</span></li>
+    <li><span>Image 05</span></li>
+    <li><span>Image 06</span></li>
+</ul>
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register As a Teacher') }}</div>
+        <div class="col-md-6">
+            <div class="card custom-card">
+                <div class="card-header"><b>{{ __('Register As a Teacher') }}</b></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="name" class="col-md-3 col-form-label text-md-right">{{ __('Name') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -25,9 +33,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="designation" class="col-md-4 col-form-label text-md-right">{{ __('Designation') }}</label>
+                            <label for="designation" class="col-md-3 col-form-label text-md-right">{{ __('Designation') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="designation" type="text" class="form-control @error('designation') is-invalid @enderror" name="designation" value="{{ old('designation') }}" required autocomplete="designation" autofocus>
 
                                 @error('designation')
@@ -39,10 +47,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile No.') }}</label>
+                            <label for="mobile" class="col-md-3 col-form-label text-md-right">{{ __('Mobile No.') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="mobile" type="numbers" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile">
+                            <div class="col-md-8">
+                                <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile">
 
                                 @error('mobile')
                                     <span class="invalid-feedback" role="alert">
@@ -52,9 +60,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="email" class="col-md-3 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -67,9 +75,9 @@
 
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-3 col-form-label text-md-right">{{ __('Password') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -81,17 +89,17 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                            <label for="password-confirm" class="col-md-3 col-form-label text-md-right">{{ __('Confirm Pass') }}</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
                         <input type="hidden" name="role" value="Teacher">
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                        <div class="form-group row mb-2">
+                            <div class="col-md-8 offset-md-3">
+                                <button type="submit" class="btn btn-secondary btn-block">
                                     {{ __('Register') }}
                                 </button>
                             </div>

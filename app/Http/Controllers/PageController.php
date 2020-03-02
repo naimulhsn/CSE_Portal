@@ -6,13 +6,24 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Student;
 use App\Teacher;
-
+use App\Content;
 
 class PageController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['login','studentSignup','teacherSignup']);
+    }
+
+
     public function index()
     {
-        return view('pages.index');
+
+        $data=Content::all();
+        return view('pages.index',[
+            'data'=>$data
+        ]);
     }
     public function slides()
     {
@@ -50,10 +61,12 @@ class PageController extends Controller
 
     public function studentCreate(Request $request)
     {
+        if(auth()->guest() )abort(403);
         return view('pages.index');
     }
     public function teacherCreate()
     {
+        if(auth()->guest() )abort(403);
         return view('pages.index');
     }
 }

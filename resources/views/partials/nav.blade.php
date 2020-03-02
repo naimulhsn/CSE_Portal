@@ -1,12 +1,12 @@
 {{--Navbar--}}
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+<nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-dark mb-0" style="z-index:9999">
     <div class="container-fluid">
       <a href="/" class="navbar-brand">
-        <h3>CSE PORTAL</h3>
+        <h4>BSMRSTU CSE Portal</h4>
       </a>
 
 
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ">
         @guest
         <li class="nav-item mr-2">
           <a class="btn btn-secondary" href="{{ route('login') }}">{{ __('Log in') }}</a>
@@ -21,9 +21,13 @@
           </div>
         </li>
         @else
+          <li class="nav-item mr-2">
+          <a class="btn btn-secondary" href="{{route('contents.create')}}">Upload Files</a>
+          </li>
           <li class="nav-item dropdown">
-            <a id="navbarDropdown" class="nav-link text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+            <a id="navbarDropdown" class=" text-white btn btn-success" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              <i class="fa fa-user"></i>  
+                {{Auth::user()->name }}
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

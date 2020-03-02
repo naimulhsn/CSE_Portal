@@ -16,6 +16,7 @@ class CreateContentsTable extends Migration
         Schema::create('contents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('uploader_id');
+            $table->string('uploader_role');
             $table->string('course_id');
             $table->string('category');
             $table->string('file_name');

@@ -15,11 +15,8 @@
 
   <body>
      @include('partials.nav')
-     <div class="wrapper">
      @include('partials.sidebar')
      @yield('content')
-
-     </div>
     {{--Scripts--}}
     @include('partials.scripts')
 

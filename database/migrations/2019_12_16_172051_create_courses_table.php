@@ -15,9 +15,9 @@ class CreateCoursesTable extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('course_teacher_id')->default();
-            $table->string('course_name');
-            $table->string('course_code');
+            $table->bigInteger('course_teacher_id')->default(0);
+            $table->string('name');
+            $table->string('code');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateCoursesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        //Schema::dropIfExists('courses');
     }
 }

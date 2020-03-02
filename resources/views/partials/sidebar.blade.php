@@ -1,52 +1,46 @@
 {{--Sidebar--}}
 
-    <nav id="sidebar">
-      <div class="sidebar-header">
-        <h3>MENU</h3>
-      </div>
-
-      <ul class="list-unstyled components">
+    <div class="custom-sidebar">
+    
+      <ul class="list-unstyled components pt-2 pb-5">
         <li>
-          <a
+          <a class="dropdown-toggle"
             href="#homeSubmenu"
             data-toggle="collapse"
-            aria-expanded="false"
-            class="dropdown-toggle"
-            >COURSES</a
-          >
+            aria-expanded="false">COURSES</a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
             <li>
               <a href="/course">All Courses</a>
             </li>
             <li>
-              <a href="#">CSE 351</a>
+              <a href="#">Numerical Method</a>
             </li>
             <li>
-              <a href="#">CSE 352</a>
+              <a href="#">Numerical Method Lab</a>
             </li>
             <li>
-              <a href="#">CSE 353</a>
+              <a href="#">Software Engineering</a>
             </li>
             <li>
-              <a href="#">CSE 354</a>
+              <a href="#">Software Engineering</a>
             </li>
             <li>
-              <a href="#">CSE 355</a>
+              <a href="#">Computer Networks</a>
             </li>
             <li>
-              <a href="#">CSE 356</a>
+              <a href="#">Computer Networks Lab</a>
             </li>
             <li>
-              <a href="#">CSE 357</a>
+              <a href="#">Computer Graphics</a>
             </li>
             <li>
-              <a href="#">CSE 358</a>
+              <a href="#">Computer Graphics Lab</a>
             </li>
             <li>
-              <a href="#">CSE 359</a>
+              <a href="#">Microprocessor and Microcontroller</a>
             </li>
             <li>
-              <a href="#">CSE 360</a>
+              <a href="#">Microprocessor and Microcontroller lab</a>
             </li>
           </ul>
         </li>
@@ -58,4 +52,4 @@
           <a href="#">NOTICE BOARD</a>
         </li>
       </ul>
-    </nav>
+    </div>

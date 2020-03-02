@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'PageController@index')->name('index');
+
 Route::get('/slides', 'PageController@slides');
 Route::get('/notes', 'PageController@notes');
 Route::get('/books', 'PageController@books');
@@ -26,3 +27,7 @@ Route::post('/teacherSignup', 'PageController@teacherCreate')->name('registerTea
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('contents','ContentsController')->except(['edit']);
+
+Route::get('/download/{id}', 'ContentsController@download')->name('download');
